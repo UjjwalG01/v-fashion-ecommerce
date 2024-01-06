@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Navlink = ({ href, label }) => {
     return (
-        <li><a href={href}>{label}</a></li>
+        <li><Link href={href}>{label}</Link></li>
     )
 }
 
