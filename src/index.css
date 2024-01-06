@@ -140,6 +140,9 @@ svg {
   margin-inline: var(--size-200);
   margin-top: var(--size-400);
 }
+.logo-icon {
+  max-width: max(var(--size-400), 3cqi);
+}
 .logo {
   display: flex;
   align-items: center;
@@ -150,7 +153,7 @@ svg {
 }
 
 @media (max-width: 50em) {
-  .logo .svg {
+  .logo span {
     display: none;
   }
 }

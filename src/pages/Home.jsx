@@ -22,14 +22,16 @@ import BrandLogo from "../components/BrandLogo";
 import Product from "../components/Product";
 
 import Header from "../components/Header";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Footer from "../components/Footer";
+import { PageContext } from "../App";
 
 function Home() {
-    const [clicked, setClicked] = useState(false);
+    const { clicked, setClicked, handleNavClick } = useContext(PageContext)
+
     return (
         <div className={`${clicked === true && 'scroll-off'}`}>
-            <Header clicked={clicked} setClicked={setClicked} />
+            <Header clicked={clicked} setClicked={setClicked} handleNavClick={handleNavClick} />
             <main>
                 <section className="padding-block-400">
                     <div className="container">
@@ -91,7 +93,7 @@ function Home() {
                             <div className="flow-300 | payday-sale">
                                 <h1 className="fs-primary-heading-xl fw-bold | sale-title">PAYDAY SALE&nbsp; NOW</h1>
                                 <h3 className="fs-500 fw-semibold">Spend minimal $100 get 30% off voucher code for your next purchase</h3>
-                                <h3 className="fs-500 fw-bold">1 June - 10 June 2021</h3>
+                                <h3 className="fs-500 fw-bold">1 January - 30 January 2024</h3>
                                 <h3 className="fs-500 fw-regular | no-top-margin">*Terms & Conditions apply</h3>
                                 <Button className={"button"} label={"SHOP NOW"} />
                             </div>
