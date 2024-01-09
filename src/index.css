@@ -140,6 +140,10 @@ svg {
 }
 
 /* Navigation */
+header {
+  box-shadow: 0 5px 5px -5px #7f7f7f;
+  padding-bottom: 1rem;
+}
 .nav-wrapper {
   margin-inline: var(--size-200);
   margin-top: var(--size-400);
@@ -724,6 +728,10 @@ svg {
 .about-image-description {
   padding-inline: min(1em, 1.5cqi);
 }
+.about-image-description h1 {
+  margin-top: -0.7rem;
+  font-size: clamp(1em, 3rem, 4rem);
+}
 
 @media (max-width: 70em) {
   .store-card {
@@ -836,6 +844,44 @@ svg {
   }
   .journal-columns {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Catelogue Section CSS */
+.catelogue-grid {
+  /* grid-row: 4; */
+  columns: 4;
+}
+.catelogue-grid .box {
+  cursor: pointer;
+  overflow: hidden;
+}
+.catelogue-grid .box img {
+  transition: all 0.4s ease-in-out;
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+.catelogue-grid .box:hover img {
+  transform: scale(1.2);
+}
+.catelogue-btn {
+  width: 100%;
+  margin-block: 4rem;
+  height: 6rem;
+  border: none;
+  cursor: pointer;
+  font-size: var(--fs-100);
+  font-weight: var(--fw-semi-bold);
+  border-radius: 1rem;
+}
+.catelogue-btn:where(:hover, :focus) {
+  background-color: var(--clr-light-100);
+  border: 0.5px solid #000000;
+}
+
+@media (max-width: 70em) {
+  .catelogue-grid {
+    columns: 2;
   }
 }
 

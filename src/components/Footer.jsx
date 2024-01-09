@@ -26,7 +26,7 @@ const Footer = ({ className }) => {
                         <div className="flow-300 | single-col">
                             <ul role="list">
                                 <li><p>Company</p></li>
-                                <Navlink href={"#"} label={"About"} />
+                                <Navlink href={"/about"} label={"About"} />
                                 <Navlink href={"#"} label={"Contact"} />
                                 <Navlink href={"#"} label={"Support"} />
                                 <Navlink href={"#"} label={"Careers"} />
@@ -49,7 +49,7 @@ const Footer = ({ className }) => {
                                 <Navlink href={"#"} label={"Terms & conditions"} />
                                 <Navlink href={"#"} label={"Privacy Policy"} />
                                 <li>
-                                    <button className="button btn-top | btn-sm-show">Sign Up</button>
+                                    <button className="button btn-top | btn-sm-show"><Link to={"/signin"}>Sign Up</Link></button>
                                 </li>
                             </ul>
                         </div>

@@ -7,7 +7,7 @@ import fav1 from "../assets/fav1.png"
 import fav2 from "../assets/fav2.png"
 import yellowImg from "../assets/girl-in-red-transformed.png"
 
-// Carousel Images
+// Carousel Images import
 import HM from "../assets/h_m-remove.png";
 import OBEY from "../assets/obey-remove.png";
 import SHOPIFY from "../assets/shopify-remove.png";
@@ -16,19 +16,21 @@ import LEVI from "../assets/levis-remove.png";
 import AMAZON from "../assets/amazon-remove.png";
 
 import { FaArrowRightLong } from "react-icons/fa6";
+import { Suspense, lazy } from "react";
+import Image from "../components/Image";
 
-import Button from "../components/Button";
-import BrandLogo from "../components/BrandLogo";
-import Product from "../components/Product";
+const Button = lazy(() => import("../components/Button"));
+const BrandLogo = lazy(() => import("../components/BrandLogo"));
+const Product = lazy(() => import("../components/Product"));
+const Footer = lazy(() => import("../components/Footer"));
 
-import Header from "../components/Header";
-import { useContext, useState } from "react";
-import Footer from "../components/Footer";
-import { PageContext } from "../App";
+// import Button from "../components/Button";
+// import BrandLogo from "../components/BrandLogo";
+// import Product from "../components/Product";
+// import Footer from "../components/Footer";
+
 
 function Home() {
-    const { clicked, setClicked, handleNavClick } = useContext(PageContext)
-
     return (
         <>
             <main>
@@ -38,9 +40,10 @@ function Home() {
                             <div className="flow-100 | text-section">
                                 <h1 className="fs-primary-heading fw-bold | yellow-rect">LET'S EXPLORE UNIQUE CLOTHES.</h1>
                                 <p className="fw-regular">Live for Influential and Innovative fashion!</p>
-                                <Button className={"button"} label={"Shop Now"} />
+                                <Suspense fallback={"loading"}><Button className={"button"} label={"Shop Now"} /></Suspense>
                             </div>
                             <div className="img-section">
+                                {/* <Image src={vibingGirl} alt={"A girl with pink dress enjoying the vibe."} /> */}
                                 <img src={vibingGirl} alt="A girl with pink dress enjoying the vibe." />
                             </div>
                         </div>
@@ -51,12 +54,12 @@ function Home() {
                     <div className="carousel">
                         <div className="carousel-items">
                             <ul>
-                                <BrandLogo src={HM} alt={"H&M logo"} />
-                                <BrandLogo src={OBEY} alt={"OBEY logo"} />
-                                <BrandLogo src={SHOPIFY} alt={"SHOPIFY logo"} />
-                                <BrandLogo src={LACOSTE} alt={"LACOSTE logo"} />
-                                <BrandLogo src={LEVI} alt={"LEVI logo"} />
-                                <BrandLogo src={AMAZON} alt={"AMAZON logo"} />
+                                <Suspense fallback={"loading"}><BrandLogo src={HM} alt={"H&M logo"} /></Suspense>
+                                <Suspense fallback={"loading"}><BrandLogo src={OBEY} alt={"OBEY logo"} /></Suspense>
+                                <Suspense fallback={"loading"}><BrandLogo src={SHOPIFY} alt={"SHOPIFY logo"} /></Suspense>
+                                <Suspense fallback={"loading"}><BrandLogo src={LACOSTE} alt={"LACOSTE logo"} /></Suspense>
+                                <Suspense fallback={"loading"}><BrandLogo src={LEVI} alt={"LEVI logo"} /></Suspense>
+                                <Suspense fallback={"loading"}><BrandLogo src={AMAZON} alt={"AMAZON logo"} /></Suspense>
                             </ul>
                         </div>
                     </div>
@@ -68,17 +71,17 @@ function Home() {
                             <h2 className="fs-secondary-heading fw-bold padding-block-400 | text-center-sm">NEW ARRIVALS</h2>
                             <div className="product-items">
                                 <ul role="list" className="even-columns | product">
-                                    <Product src={item1} title={"Hoodies & Sweetshirt"} subtitle={"Explore Now!"} href={"#"}>
+                                    <Suspense><Product src={item1} title={"Hoodies & Sweetshirt"} subtitle={"Explore Now!"} href={"#"}>
                                         <FaArrowRightLong className="arrow" />
-                                    </Product>
+                                    </Product></Suspense>
 
-                                    <Product src={item2} title={"Coats & Parkas"} subtitle={"Explore Now!"} href={"#"}>
+                                    <Suspense><Product src={item2} title={"Coats & Parkas"} subtitle={"Explore Now!"} href={"#"}>
                                         <FaArrowRightLong className="arrow" />
-                                    </Product>
+                                    </Product></Suspense>
 
-                                    <Product src={item3} title={"Tees & T-Shirt"} subtitle={"Explore Now!"} href={"#"}>
+                                    <Suspense><Product src={item3} title={"Tees & T-Shirt"} subtitle={"Explore Now!"} href={"#"}>
                                         <FaArrowRightLong className="arrow" />
-                                    </Product>
+                                    </Product></Suspense>
                                 </ul>
                             </div>
                         </div>
@@ -106,13 +109,13 @@ function Home() {
                             <h2 className="fs-secondary-heading fw-bold padding-block-400 | text-center-sm">Young's Favourite</h2>
                             <div className="product-items | favourite">
                                 <ul role="list" className="even-columns | fav-columns">
-                                    <Product src={fav1} title={"Trending on instagram"} subtitle={"Explore Now!"} href={"#"}>
+                                    <Suspense><Product src={fav1} title={"Trending on instagram"} subtitle={"Explore Now!"} href={"#"}>
                                         <FaArrowRightLong className="arrow" />
-                                    </Product>
+                                    </Product></Suspense>
 
-                                    <Product src={fav2} title={"All Under $40"} subtitle={"Explore Now!"} href={"#"}>
+                                    <Suspense><Product src={fav2} title={"All Under $40"} subtitle={"Explore Now!"} href={"#"}>
                                         <FaArrowRightLong className="arrow" />
-                                    </Product>
+                                    </Product></Suspense>
                                 </ul>
                             </div>
                         </div>
@@ -132,7 +135,7 @@ function Home() {
                     </div>
                 </section>
             </main>
-            <Footer />
+            <Suspense fallback="loading.."><Footer /></Suspense>
         </>
 
     )

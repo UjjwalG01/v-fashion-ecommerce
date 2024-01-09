@@ -1,10 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer';
-import { PageContext } from '../App';
 
 const ComingSoon = ({ page }) => {
-    const { clicked, setClicked, handleNavClick } = useContext(PageContext)
     return (
         <div className='margin-top'>
             <div className='text-center flow-300 margin-top | coming-soon'>
