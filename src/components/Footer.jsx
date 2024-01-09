@@ -6,9 +6,9 @@ import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 import Navlink from './Navlink'
 import logo2 from "../assets/icon2.png"
 
-const Footer = () => {
+const Footer = ({ className }) => {
     return (
-        <footer className="bg-dark-900 text-light-100 padding-block-700">
+        <footer className={`bg-dark-900 text-light-100 padding-block-700 ${className}`}>
             <div className="container">
                 <div className="even-columns | footer-content">
                     <div className="flow-300 | footer-left-container">

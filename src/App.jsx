@@ -2,26 +2,33 @@ import { Routes, Route } from "react-router-dom"
 import Home from "./pages/Home"
 import ComingSoon from "./pages/ComingSoon"
 import { createContext, useState } from "react"
+import SignIn from "./pages/SignIn";
+import About from "./pages/About";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Login from "./pages/Login";
 
 export const PageContext = createContext();
 
 function App() {
   const [clicked, setClicked] = useState(false);
 
-  const handleNavClick = () => {
-    setClicked(!clicked);
-  }
-
-  const value = { clicked, setClicked, handleNavClick }
+  const value = { clicked, setClicked }
   return (
     <PageContext.Provider value={value}>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/catalogue" element={<ComingSoon page={"Catalogue"} />} />
-        <Route path="/fashion" element={<ComingSoon page={"Fashion"} />} />
-        <Route path="/favourite" element={<ComingSoon page={"Favourite"} />} />
-        <Route path="/lifestyle" element={<ComingSoon page={"Lifestyle"} />} />
-      </Routes>
+      <div className={`${clicked === true && 'scroll-off'}`}>
+        <Header clicked={clicked} setClicked={setClicked} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/catalogue" element={<ComingSoon page={"Catalogue"} />} />
+          <Route path="/fashion" element={<ComingSoon page={"Fashion"} />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/lifestyle" element={<ComingSoon page={"Lifestyle"} />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+        {/* <Footer /> */}
+      </div>
     </PageContext.Provider>
   )
 }

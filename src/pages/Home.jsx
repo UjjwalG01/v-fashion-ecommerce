@@ -30,8 +30,7 @@ function Home() {
     const { clicked, setClicked, handleNavClick } = useContext(PageContext)
 
     return (
-        <div className={`${clicked === true && 'scroll-off'}`}>
-            <Header clicked={clicked} setClicked={setClicked} handleNavClick={handleNavClick} />
+        <>
             <main>
                 <section className="padding-block-400">
                     <div className="container">
@@ -133,10 +132,9 @@ function Home() {
                     </div>
                 </section>
             </main>
-
-            {/* Footer section */}
             <Footer />
-        </div>
+        </>
+
     )
 }
 

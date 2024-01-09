@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Navlink = ({ href, label }) => {
+const Navlink = ({ href, label, onClick }) => {
     return (
-        <li><Link to={href}>{label}</Link></li>
+        <li><Link onClick={onClick} to={href}>{label}</Link></li>
     )
 }
 

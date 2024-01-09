@@ -9,7 +9,7 @@ import { PageContext } from "../App";
 
 const Header = () => {
 
-    const { clicked, setClicked, handleNavClick } = useContext(PageContext)
+    const { clicked, setClicked } = useContext(PageContext)
 
     window.onresize = () => {
         setClicked(false)
@@ -21,7 +21,7 @@ const Header = () => {
                     <Link className="logo fw-bold" to={"/"}>
                         <img className="logo-icon" src={logo} alt="Logo" />
                         <span className="fs-500 fw-bold">VFASHION</span></Link>
-                    <button onClick={handleNavClick} className="mobile-nav-toggle" aria-controls="primary-navigation">
+                    <button onClick={() => setClicked(!clicked)} className="mobile-nav-toggle" aria-controls="primary-navigation">
                         {clicked ? (
                             <MdClose className="icon icon-close" />
                         ) : (
@@ -31,11 +31,11 @@ const Header = () => {
                     </button>
                     <nav className={`primary-navigation ${clicked ? 'show' : ''}`} id="primary-navigation">
                         <ul role="list" className="nav-list">
-                            <Navlink href={"/catalogue"} label={"Catalogue"} />
-                            <Navlink href={"/fashion"} label={"Fashion"} />
-                            <Navlink href={"/favourite"} label={"Favourite"} />
-                            <Navlink href={"/lifestyle"} label={"LifeStyle"} />
-                            <li><button className="btn-sm-hidden | button btn-top">Sign Up</button></li>
+                            <Navlink onClick={() => setClicked(false)} href={"/catalogue"} label={"Catalogue"} />
+                            <Navlink onClick={() => setClicked(false)} href={"/fashion"} label={"Fashion"} />
+                            <Navlink onClick={() => setClicked(false)} href={"/about"} label={"About"} />
+                            <Navlink onClick={() => setClicked(false)} href={"/lifestyle"} label={"LifeStyle"} />
+                            <li><Link to={"/signin"}><button className="btn-sm-hidden | button btn-top">Sign Up</button></Link></li>
                         </ul>
                     </nav>
                 </div>
