@@ -49,8 +49,8 @@ const About = () => {
                 <div className="container | header">
                     <Image src={parallexImg} alt={"Parallex Image"} className={"background"} />
                     {/* <img loading='lazy' src={parallexImg} className='background' /> */}
-                    <div className="flow-100 | text-section | title">
-                        <h1 className="fs-primary-heading clr-primary fw-bold">HERE'S ABOUT US!</h1>
+                    <div className="flow-100 | text-section | title line-200">
+                        <h1 className="fs-primary-heading fw-bold">HERE'S ABOUT US!</h1>
                         <p className="fw-semibold">Elevate your style, elevate your confidence!</p>
                         <Button className={"button"} label={`EXPLORE US >`} />
                     </div>
