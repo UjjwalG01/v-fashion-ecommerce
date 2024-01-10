@@ -7,8 +7,7 @@ const Image = ({ src, alt, className }) => {
     let callback = (entries, observer) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                console.log(entry)
-                setInView(true)
+                setInView(true);
             }
         });
     }
@@ -22,7 +21,7 @@ const Image = ({ src, alt, className }) => {
 
     return inView ? (
         <img loading='lazy' src={src} alt={alt} className={className} />
-    ) : <img ref={ref} style={{ width: "100%", height: "100%", backgroundColor: "blueviolet" }} />
+    ) : <img ref={ref} style={{ width: "1000px", height: "1000px", backgroundColor: "gray", opacity: "0.2" }} />
 }
 
 export default Image

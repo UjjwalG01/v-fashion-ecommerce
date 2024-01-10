@@ -12,6 +12,7 @@ import journal1 from "../assets/journal-1.jpg"
 import journal2 from "../assets/journal-2.jpg"
 import journal3 from "../assets/journal-3.jpg"
 import { Link } from 'react-router-dom'
+import Image from '../components/Image'
 // import Carousel from '../components/Carousel'
 
 const About = () => {
@@ -46,7 +47,8 @@ const About = () => {
         <>
             <section className="wrapper">
                 <div className="container | header">
-                    <img loading='lazy' src={parallexImg} className='background' />
+                    <Image src={parallexImg} alt={"Parallex Image"} className={"background"} />
+                    {/* <img loading='lazy' src={parallexImg} className='background' /> */}
                     <div className="flow-100 | text-section | title">
                         <h1 className="fs-primary-heading clr-primary fw-bold">HERE'S ABOUT US!</h1>
                         <p className="fw-semibold">Elevate your style, elevate your confidence!</p>
@@ -73,7 +75,10 @@ const About = () => {
                 <section className="store-started-section padding-block-900 bg-light-100 no-top-margin">
                     <div className="container">
                         <div className="store-card">
-                            <div className="about-image-content bg-accent-100"><img src={fashionImg} alt="A girl wearing black dress sitting in street" /></div>
+                            <div className="about-image-content bg-accent-100">
+                                <Image src={fashionImg} alt={"A girl wearing black dress sitting in street"} />
+                                {/* <img src={fashionImg} alt="A girl wearing black dress sitting in street" /> */}
+                            </div>
                             <div className="about-image-description flow-200">
                                 <h1 className='fw-semibold'>How was <span className='fw-bold'>VFASHION</span> Started?</h1>
                                 <p className='font-100'>Welcome to VFASHION, where we believe that fashion is an expression of individuality. Our brand is dedicated to providing high-quality clothing that is both stylish and comfortable. We believe that fashion should be accessible to everyone, which is why we offer a wide range of sizes and styles to suit every taste. Our team of designers is passionate about creating unique pieces that are both timeless and on-trend. We use only the finest materials and pay close attention to every detail to ensure that our clothing is of the highest quality. At VFASHION, we are committed to providing our customers with exceptional service and a shopping experience that is both enjoyable and stress-free. Thank you for choosing VFASHION for all your fashion needs!</p>
@@ -109,21 +114,30 @@ const About = () => {
                         </div>
                         <div className="journal-columns">
                             <Link className="journal-item no-underline">
-                                <div className="image"><img loading='lazy' src={journal3} alt="Our Journal Image 1" /></div>
+                                <div className="image">
+                                    <Image src={journal1} alt={"Our Journal Image 1"} />
+                                    {/* <img loading='lazy' src={journal3} alt="Our Journal Image 1" /> */}
+                                </div>
                                 <div className="journal-text">
                                     <div className="date fw-semibold font-200">23 Oct</div>
                                     <div className="journal-title font-100">Top 10 Casual Look Ideas To Dress Up Your Kids</div>
                                 </div>
                             </Link>
                             <Link className="journal-item no-underline">
-                                <div className="image"><img loading='lazy' src={journal1} alt="Our Journal Image 2" /></div>
+                                <div className="image">
+                                    <Image src={journal2} alt={"Our Journal Image 2"} />
+                                    {/* <img loading='lazy' src={journal1} alt="Our Journal Image 2" /> */}
+                                </div>
                                 <div className="journal-text">
                                     <div className="date fw-semibold font-200">02 Dec</div>
                                     <div className="journal-title font-100">Don't stress about the dress, we'll dress you to impress.</div>
                                 </div>
                             </Link>
                             <Link className="journal-item no-underline">
-                                <div className="image"><img loading='lazy' src={journal2} alt="Our Journal Image 3" /></div>
+                                <div className="image">
+                                    <Image src={journal3} alt={"Our Journal Image 3"} />
+                                    {/* <img loading='lazy' src={journal2} alt="Our Journal Image 3" /> */}
+                                </div>
                                 <div className="journal-text">
                                     <div className="date fw-semibold font-200">12 Jan</div>
                                     <div className="journal-title font-100">Every day is a fashion show and the world is your runway.</div>

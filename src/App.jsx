@@ -10,7 +10,8 @@ const Header = lazy(() => import("./components/Header"));
 
 // Pages imports
 const Home = lazy(() => import("./pages/Home"));
-const Catelogue = lazy(() => import("./pages/Fashion"));
+const Fashion = lazy(() => import("./pages/Fashion"));
+const Catelogue = lazy(() => import("./pages/Catelogue"));
 // const Fashion = lazy(() => import("./pages/Fashion"));
 const About = lazy(() => import("./pages/About"));
 const SignIn = lazy(() => import("./pages/SignIn"));
@@ -31,8 +32,8 @@ function App() {
         <Header clicked={clicked} setClicked={setClicked} />
         <Routes>
           <Route path="/" element={<Suspense fallback={<div>Loading...</div>}><Home /></Suspense>} />
-          <Route path="/catalogue" element={<Suspense fallback={<div>Loading...</div>}><ComingSoon page={"Catelogue"} /></Suspense>} />
-          <Route path="/fashion" element={<Suspense fallback={<div>Loading...</div>}><Catelogue /></Suspense>} />
+          <Route path="/catalogue" element={<Suspense fallback={<div>Loading...</div>}><Catelogue page={"Catelogue"} /></Suspense>} />
+          <Route path="/fashion" element={<Suspense fallback={<div>Loading...</div>}><Fashion /></Suspense>} />
           <Route path="/about" element={<Suspense fallback={<div>Loading...</div>}><About /></Suspense>} />
           <Route path="/lifestyle" element={<Suspense fallback={<div>Loading...</div>}><ComingSoon page={"Lifestyle"} /></Suspense>} />
           <Route path="/signin" element={<Suspense fallback={<div>Loading...</div>}><SignIn /></Suspense>} />

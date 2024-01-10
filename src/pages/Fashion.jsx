@@ -1,5 +1,5 @@
-import React from 'react'
-import Footer from '../components/Footer'
+import React from 'react';
+import Footer from '../components/Footer';
 
 import img1 from "../assets/img1.jpg";
 import img2 from "../assets/img2.jpg";
@@ -30,6 +30,34 @@ import img26 from "../assets/img26.jpg";
 import Image from '../components/Image';
 
 const Fashion = () => {
+
+    const images = [img1,
+        img2,
+        img3,
+        img4,
+        img5,
+        img6,
+        img7,
+        img8,
+        img9,
+        img10,
+        img11,
+        img12,
+        img13,
+        img14,
+        img15,
+        img16,
+        img17,
+        img18,
+        img19,
+        img20,
+        img21,
+        img22,
+        img23,
+        img24,
+        img25,
+        img26,
+        Image];
     return (
         <div>
             <section className="padding-block-400">
@@ -37,32 +65,12 @@ const Fashion = () => {
                     <div className="one-column">
                         <h1 className='font-200 padding-block-400 fw-semibold'>AVAILABE FASHIONED DESIGNS</h1>
                         <div className="flow-200 catelogue-grid">
-                            <div className="box"><Image src={img1} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img2} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img3} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img4} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img5} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img6} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img7} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img8} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img9} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img10} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img11} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img12} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img13} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img14} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img15} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img16} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img17} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img18} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img19} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img20} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img21} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img22} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img23} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img24} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img25} alt={"catelogue image"} /></div>
-                            <div className="box"><Image src={img26} alt={"catelogue image"} /></div>
+                            {images.map((image, index) => (
+                                <div className="box" key={index}>
+                                    {/* <Image src={image} alt={"Catelogue Image"} /> */}
+                                    <Image src={image} alt={"Catelogue Image"} />
+                                </div>
+                            ))}
                         </div>
                         <button className='catelogue-btn'>LOAD MORE</button>
                     </div>
@@ -73,4 +81,4 @@ const Fashion = () => {
     )
 }
 
-export default Fashion
+export default Fashion;

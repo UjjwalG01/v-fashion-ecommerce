@@ -1,16 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Navlink from './Navlink';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
-
 import logo from "../assets/icon.png"
-import { PageContext } from "../App";
 
-const Header = () => {
-
-    const { clicked, setClicked } = useContext(PageContext)
-
+const Header = ({ clicked, setClicked }) => {
     window.onresize = () => {
         setClicked(false)
     }
