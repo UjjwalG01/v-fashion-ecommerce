@@ -209,8 +209,9 @@ header {
 }
 .text-section {
   position: relative;
-  color: #ffffff !important;
+  color: var(--clr-accent-100);
   opacity: 0.85;
+  /* background-color: red; */
 }
 .text-section .yellow-rect {
   color: var(--clr-dark-900);
