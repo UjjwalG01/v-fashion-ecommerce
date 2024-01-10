@@ -60,10 +60,10 @@ const Fashion = () => {
         Image];
     return (
         <div>
-            <section className="padding-block-400">
+            <section className="">
                 <div className="container">
                     <div className="one-column">
-                        <h1 className='font-200 padding-block-400 fw-semibold'>AVAILABE FASHIONED DESIGNS</h1>
+                        <h1 className='font-100 underline align-left fw-semibold'>AVAILABE FASHIONED DESIGNS</h1>
                         <div className="flow-200 catelogue-grid">
                             {images.map((image, index) => (
                                 <div className="box" key={index}>
