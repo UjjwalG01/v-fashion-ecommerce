@@ -48,6 +48,9 @@ const Footer = ({ className }) => {
                                 <li><p>Legal</p></li>
                                 <Navlink href={"#"} label={"Terms & conditions"} />
                                 <Navlink href={"#"} label={"Privacy Policy"} />
+                                <Navlink target={"_blank"} href={"https://www.figma.com/file/cc43P2ku48sDtnT0ywHVng/Shopping-Website-(Community)?type=design&node-id=2-2&mode=design&t=sHZUzmvbx3rkJZgf-0"} label={"FIGMA FILE"} className='flex'>
+                                    <img className='figma-logo' src="https://2.bp.blogspot.com/-KVFNcyNJpmc/XIe-Sqa674I/AAAAAAAAIuk/VRK5WWydfD4yjMq_AkU6B2h3WAROEvOMgCK4BGAYYCw/s1600/logo%2Bfigma%2Bicon.png" alt="" />
+                                </Navlink>
                                 <li>
                                     <button className="button btn-top | btn-sm-show"><Link to={"/signin"}>Sign Up</Link></button>
                                 </li>

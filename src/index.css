@@ -130,7 +130,8 @@ svg {
 }
 
 .btn-top {
-  padding: 0.75em 1.5em;
+  padding: 0.5em 1.5em;
+  margin: 0;
   font-size: var(--fs-200);
   text-transform: uppercase;
 }
@@ -147,7 +148,7 @@ header {
 }
 .nav-wrapper {
   margin-inline: var(--size-200);
-  margin-top: var(--size-400);
+  margin-top: var(--size-200);
 }
 .logo-icon {
   max-width: max(var(--size-400), 3cqi);
@@ -516,6 +517,9 @@ header {
 .footer-left-container .svg {
   width: 1.5em;
 }
+.figma-logo {
+  max-width: max(1.4rem, var(--fs-500));
+}
 
 @media (max-width: 50em) {
   .footer-content .logo {
@@ -771,14 +775,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 1s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: 1s cubic-bezier(0.39, 0.575, 0.565, 1) !important;
 }
 .content {
   max-width: min(70em, 70%);
   padding-inline: 2rem;
 }
-.content > * {
-  transition: all 0.2s ease-out;
+.carousel-item {
+  transition: all 0.2s ease-out !important;
 }
 .quote-icon {
   min-width: 2rem;
@@ -810,15 +814,17 @@ header {
   background-color: #dde1ed;
   border-radius: min(0.5rem, var(--size-100));
   overflow: hidden !important;
-  max-height: 100%;
 }
 .journal-item .image {
   overflow: hidden;
-  transition: all 0.4s linear ease;
 }
+
 .journal-item img {
-  transition: all 0.4s linear ease;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.2s ease-out !important;
 }
+
 .journal-item:hover img {
   transform: scale(1.2);
   opacity: 0.94;
@@ -830,11 +836,7 @@ header {
     margin-inline: 2rem;
   }
 }
-.journal-item img {
-  width: 100%;
-  object-fit: cover;
-  max-height: 24em;
-}
+
 .journal-text {
   padding-block: 1.5rem;
   padding-inline: 0.8em;
@@ -862,7 +864,7 @@ header {
   overflow: hidden;
 }
 .catelogue-grid .box img {
-  transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out !important;
   border-radius: 0.5em;
   overflow: hidden;
 }
